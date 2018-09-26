@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>login page</title>
+    <meta charset="utf-8">   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <style type="text/css">
+ 	nav{font-family: Apple Chancery,cursive;}
+ 	h3{text-align: center;font-size: 40px;font-style: oblique;}
+ 	p{text-align: center;padding-top: 200px;font-size: 26px;color: blue;}
+ 	button{font-size: 35px;}
+    </style>
+ {% load static %}
+</head>
+<body background="{% static 'homepage/images/r4.jpg' %}">
+<nav class='nav navbar-inverse'>
+	<div class='container-fluid'>
+	
+		<div class='navbar=header'>
+				<a href='#' class='navbar=brand'></a>
+			</div>
+
+			<div>
+				<ul class='nav navbar-nav'>
+						<li class='active'><a href="{% url 'account' request.user.id %}">Dashboard</li></a>
+						<li><a href="{% url 'upload' request.user.id %}">Upload Assignment</a></li>
+						<li><a href="{% url 'contact' %}">Contact</a></li>
+					
+				</ul>
+				<ul class='nav navbar-nav navbar-right'>
+					<li><a href="{% url 'logout' %}"><span class='glyphicon glyphicon-log-out'></span>Logout</a></li>
+				</ul>
+			</div>
+
+		</div>
+</nav>
+
+<h3>Welcome,{{user.first_name}}</h3>
+<p font>Instructions to follow before uploading assignments :</p>
+<p>Enter your roll no in the form and make sure not to make any error in that</p>
+<p>Assignment should only be uploaded in the pdf format</p>
+<p>Select your course carefully</p>
+<p class='upload'> Want to upload your assignment <a href="{% url 'upload' request.user.id %}"><button type='button' class='btn btn-info'>Click Here</button></a></p>
+
+</body>

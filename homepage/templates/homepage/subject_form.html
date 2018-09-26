@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    {% load static %}
+    <title>login page</title>
+    <meta charset="utf-8">   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <style type="text/css">
+    h4{text-align: center;font-size: 30px;}
+    p{font-size: 25px;}
+    nav{font-family: Apple Chancery,cursive;}
+    h4{font-family: Apple Chancery,cursive;}
+    p{text-align: center;}
+    h5{font-size: 25px;text-align: center;}
+    h6{font-size: 25px;text-align: center;}
+    form{text-align: center;padding-top: 100px;}
+    button{text-align: center;padding-top: 200px;padding-left: 20px;}
+    form{text-align: center;font-style: oblique;font-size: 18px;}
+    .form-control{width: 100%;display: inline-block;}
+    .controls{display: inline-block;}
+    .form-group{padding-top: 50px;}
+    </style>
+
+ </head>
+ <body>
+<nav class='nav navbar-inverse'>
+    <div class='container-fluid'>
+    
+        <div class='navbar=header'>
+                <a href='#' class='navbar=brand'></a>
+            </div>
+
+            <div>
+                <ul class='nav navbar-nav'>
+                    <li class='active'><a href="{% url 'Teacher_dashboard' %}"><span class='glyphicon glyphicon-home'></span>Dashboard</a></li>
+                    <li><a href="{% url 'Teacher_Subject' %}"><span class='glyphicon glyphicon-plus'></span>Subjects</a></li>
+                    <li><a href="{% url 'assignments' %}"><span class='glyphicon glyphicon-list-alt'></span>Assignments</a></li>
+                </ul>
+                <ul class='nav navbar-nav navbar-right'>
+                    <li><a href="{% url 'teacher_logout' %}"><span class='glyphicon glyphicon-log-out'></span>Logout</a></li>
+                </ul>
+            </div>
+
+        </div>
+</nav>
+{% load crispy_forms_tags %}
+<form role='form' action='' method='post' enctype='multipart/form-data'>{% csrf_token %}
+    <div class='form-group'>
+        {{form|crispy}}</br>
+       <a href="{% url 'Teacher_dashboard' %}"><button type='submit' class='btn btn-primary'>Save</button></a>
+    </div>
+</form>
+</body>

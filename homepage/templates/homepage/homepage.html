@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <title>login page</title>
+    <meta charset="utf-8">   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <style type="text/css">
+    h4{text-align: center;font-size: 30px;}
+    p{font-size: 25px;}
+    nav{font-family: Apple Chancery,cursive;}
+    h4{font-family: Apple Chancery,cursive;}
+    p{text-align: center;}
+    h5{font-size: 25px;text-align: center;}
+    h6{font-size: 25px;text-align: center;}
+    </style>
+
+ </head>
+ <body>
+<nav class='nav navbar-inverse'>
+    <div class='container-fluid'>
+    
+        <div class='navbar=header'>
+                <a href='#' class='navbar=brand'></a>
+            </div>
+
+            <div>
+                <ul class='nav navbar-nav'>
+                    <li class='active'><a href="{% url 'home' %}">About</a></li>
+                    <li><a href="{% url 'subjects' %}">Subjects</a></li>
+                    <li><a href="{% url 'contact-1' %}">Contact</a></li>
+                </ul>
+                <ul class='nav navbar-nav navbar-right'>
+                    <li><a href="{% url 'teacher_login' %}"><span class='glyphicon glyphicon-log-in'></span>Teacher login</a></li>
+                </ul>
+            </div>
+
+        </div>
+</nav>
+<h4>Dr. Sharanjit Kaur</h4>
+<p>A Ph.D from University of Delhi in the area of 'Mining Data Streams',her areas of interest in research are 'databses' and 'Data Mining'.</br>She is currently supervising M.Sc research in the area of 'Cloud Computing' at Department of Computer Science,University of Delhi.</br>She has organized multiple workshops using free and open source software(FOSS) to spread awareness among students in the futuristic avenues in FOSS paradigm.</br>She has also supervised students under 'Elite' Programme in 2012.She is also Supervising MSc(Computer Science) research project</br> as co-supervisor at Department of Computer Science,University of Delhi,since july 2012 </p>
+<h5> Publications (last 5 years)</h5>
+<table class='table table-condense'>
+    <thead>
+        <tr>
+            <th>Year of publication</th>
+            <th>Title</th>
+            <th>Journal/Book</th>
+            <th>Co-Authors</th>
+
+        </tr>
+    <tbody>
+        <tr>
+            <td>2014</td>
+            <td>Stream Clustering Algorithms (Accepted)</td>
+            <td>A primer,BIG DATA in Complex systems: challenges and oppurtunities(Springer)</td>
+            <td>Vasudha Bhatnagar and Sharma Chakaravarty</td>
+
+
+        </tr>
+        <tr>
+            <td>2014</td>
+            <td>Clustering Data Streams Using Grid based Sypnosis</td>
+            <td>Journal of Knowledge and information systems(springer)</td>
+            <td>Vasudha Bhatnagar and sharma chakaravarty</td>
+
+        </tr>
+        <tr>
+            <td>2013</td>
+            <td>Discrimnant Analysis-Based Cluster Ensemble (Accepted)</td>
+            <td>International journal of Data Mining,Modelling and Management</td>
+            <td>Vasudha Bhatnagar and Sharma Chakaravarty</td>
+
+
+        </tr>
+        <tr>
+            <td>2011</td>
+            <td>A Parameterized Framework For Stream Clustering Algorithms (Reprint)</td>
+            <td>Integrations of Data Warehousing, Data Mining and Database Technologies(book)</td>
+            <td>Vasudha Bhatnagar and Laurent mignet</td>
+
+        </tr>
+        <tr>
+            <td>2009</td>
+            <td>1-A parameterized Framework For Stream Clustering Algorithms (reprint)</br>2-Outlier Detection</td>
+            <td>1-International journal for Data Warehousing and Mining (IJDWM 5(1))</br>2-Encyclopedia of Data Warehousing and Mining</td>
+            <td>Vasudha Bhatnagar and Laurent Mignet</td>
+
+
+        </tr>
+    </tbody>
+
+    </thead>
+
+<table class='table table-condense'>
+    <thead>
+        <tr>
+            <th>Year of publication</th>
+            <th>Title</th>
+            <th>Conference</th>
+            <th>Co-Author/s</th>
+
+        </tr>
+    <tbody>
+        <tr>
+            <td>2014</td>
+            <td>Companing Data Processing framework for scalable clustering</td>
+            <td>27th FLAIRS Conference,Florida (May 21-23,2014)</td>
+            <td>Rakhi Saxena, Dhriti Khanna and Vasudha Bhatnagar</td>
+
+        </tr>
+        <tr>
+            <td>2012</td>
+            <td>Scalable clustering Using PACT Programming Model</td>
+            <td>ICDM Workshops 2012: 424-430</td>
+            <td>Dhriti Khanna, Tripti Gupta, Vashudha Bhatnagar</td>
+
+        </tr>
+        <tr>
+            <td>2009</td>
+            <td>1- Categorizing Concepts For Detecting Drifts in Streams</br>2-Identifying Structures Using informative Dimensions in Streams</td>
+            <td>COMAD 2009</br>ACIS-ICIS 2009</td>
+            <td>Vasudha Bhatnagar, Sameep Mehta,Sudheer Kapoor</br>Vashudha Bhatnagar,Neelima Gupta</td>
+
+        </tr>
+    </tbody>
+
+    </thead>
+
+</table>
+</table>
+
+</body>

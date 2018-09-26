@@ -1,0 +1,87 @@
+
+<html lang="en">
+<head>
+    {% load static %}
+    <title>login page</title>
+    <meta charset="utf-8">   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <style type="text/css">
+    h4{text-align: center;font-size: 30px;}
+    p{font-size: 25px;}
+    nav{font-family: Apple Chancery,cursive;}
+    h4{font-family: Apple Chancery,cursive;}
+    p{text-align: center;}
+    h5{font-size: 25px;text-align: center;}
+    h6{font-size: 25px;text-align: center;}
+    form{text-align: center;padding-top: 200px;}
+    button{text-align: center;padding-top: 200px;padding-left: 20px;}
+    form{text-align: center;font-size: 16;}
+    h3{text-align: center;font-family: Apple Chancery,cursive;font-size: 34;}
+    table{padding-top: 200px;}
+    .alert{color: green;outline-color: red;background-color: white;}
+    </style>
+
+ </head>
+ <body>
+<nav class='nav navbar-inverse'>
+    <div class='container-fluid'>
+    
+        <div class='navbar=header'>
+                <a href='#' class='navbar=brand'></a>
+            </div>
+
+            <div>
+                <ul class='nav navbar-nav'>
+                    <li class='active'><a href="{% url 'Teacher_dashboard' %}"><span class='glyphicon glyphicon-home'></span>Dashboard</a></li>
+                    <li><a href="{% url 'Teacher_Subject' %}"><span class='glyphicon glyphicon-plus'></span>Subjects</a></li>
+                    <li><a href="{% url 'assignments' %}"><span class='glyphicon glyphicon-list-alt'></span>Assignments</a></li>
+                </ul>
+                <ul class='nav navbar-nav navbar-right'>
+                    <li><a href="{% url 'teacher_logout' %}"><span class='glyphicon glyphicon-log-out'></span>Logout</a></li>
+                </ul>
+            </div>
+
+        </div>
+</nav>
+
+<!-- form for teacher to select subjects which will be saved and displayed on the subjects page -->
+
+<h3>Subjects Teaching</h3>
+{% for message in messages %}
+  <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    {{ message }}
+  </div>
+{% endfor %}
+<table class='table table-condense'>
+    <thead>
+        <tr>    
+            <th>Subject</th>
+            <th>Assignment</th>
+            <th>Solution of the Assignment</th>
+            <th>Course</th>
+            <th>Last Date for Submission</th>
+            <th></th>
+            <th></th>
+        </tr>
+    <tbody>
+        {% for subject in qs %}<!-- This iterates through database for subject,assignment file,solution file and also the date of submission to be displayed on the template -->
+        <tr>
+            <th>{{subject.subject}}</th>
+            <th><a href="{{subject.assignment_given.url}}">Assignment for {{subject.subject}}</a></th>
+            <th><a href="{{subject.solution.url}}">{{subject.solution}}</a></th>
+            <th>{{subject.course}}</th>
+            <th>{{subject.date_of_submission}}</th>
+            <th><a href="{% url 'subject_update' subject.id %}"><span class='glyphicon glyphicon-pencil'></span><button type='button' class='btn btn-info'>Update</button></a></th>
+            <th><a href="{% url 'subject_delete' subject.id %}"><span class='glyphicon glyphicon-trash'></span><button type='button' class='btn btn-default' style='background:rgb(255,1,0)'>Delete</button></a></th>
+        </tr>
+        {% endfor %}
+    </tbody>
+</thead>
+</table>
+</body>

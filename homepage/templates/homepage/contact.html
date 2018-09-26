@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>login page</title>
+    <meta charset="utf-8">   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <style type="text/css">
+    h1{color: red;font-size:34px;text-align: center;}
+    p{color: blue;font-family: monospace;text-align: center;top: 50px;}
+
+    </style>
+ </head>
+ <body>
+<nav class='nav navbar-inverse'>
+    <div class='container-fluid'>
+        <div class='navbar=header'>
+            <a href='#' class='navbar=brand'></a>
+        </div>
+
+        <div>
+            <ul class='nav navbar-nav'>
+                <li><a href="{% url 'account' request.user.id %}">Dashboard</a></li>
+                <li><a href="{% url 'upload' request.user.id %}">Upload Assignment</a></li>
+                <li class='active'><a href='contact.html'>Contact</a></li>
+            </ul>
+            <ul class='nav navbar-nav navbar-right'>
+                <li><a href="{% url 'login' %}"><span class='glyphicon glyphicon-log-out'></span>Logout</a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+    <h1><em>Contact Us</em></h1>
+    <p>Contact us anytime you need on</p></br>
+    <p>rs069000@gmail.com</p>
+    <p>kartik.mishra1306@gmail.com</p>
+
+</div>
+
+
+
+ </body>

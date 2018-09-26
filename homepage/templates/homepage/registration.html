@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>login page</title>
+    <meta charset="utf-8">   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <style>
+    div{top: -50px ;text-align: center;padding-top: 30px;font-size: 20px;padding-top: 100px;}
+    h1{font-size: 100px;}
+    </style>
+    {% load static %}
+ </head>
+{% load crispy_forms_tags %}
+<body background="{% static 'homepage/images/r4.jpg' %}">
+	
+
+<div class='container'>
+				<!--login Button-->
+	<form role='form' method='post' action=''>{% csrf_token %}
+		<div class='form-group'>
+			{{form|crispy}}
+			<a href="#" title='go here'><button class='btn btn-primary' type='submit' align='center'><span class='glyphicon glyphicon-user'></span>Submit</button></a>
+		</div>
+				
+	</form>
+</div>
+</body>
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

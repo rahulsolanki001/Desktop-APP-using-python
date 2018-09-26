@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>login page</title>
+    <meta charset="utf-8">   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <style type="text/css">
+ 	nav{font-family: Apple Chancery,cursive;}
+ 	h3{text-align: center;font-size: 40px;font-style: oblique;}
+ 	button{font-size: 35px;text-align: center;padding-left: 50%;padding-top: 200px;}
+ 	form{padding-top: 100px;font-style: oblique;font-size:26px;text-align: center;}
+ 	.form-control{width: 100%;}
+ 	.controls{display: inline-block;padding-top: 100px;}
+    .form-group{padding-top: 26px;display: inline-block;font-style: oblique;}
+    .btn{font-size: 26px;}
+    .alert{color: green;background-color: white;text-align: center;font-size: 30px;}
+    </style>
+</head>
+{% load static %}
+
+<body background="{% static 'homepage/images/r4.jpg' %}">
+<nav class='nav navbar-inverse'>
+	<div class='container-fluid'>
+	
+		<div class='navbar=header'>
+				<a href='#' class='navbar=brand'></a>
+			</div>
+
+			<div>
+				<ul class='nav navbar-nav'>
+						<li><a href="{% url 'account' request.user.id %}">Dashboard</li></a>
+						<li class='active'><a href='{% url "upload" request.user.id %'>Upload Assignment</a></li>
+						<li><a href="{% url 'contact' %}">Contact</a></li>
+					
+				</ul>
+				<ul class='nav navbar-nav navbar-right'>
+					<li><a href="{% url 'logout' %}"><span class='glyphicon glyphicon-log-out'></span>Logout</a></li>
+				</ul>
+			</div>
+
+		</div>
+</nav>
+{% for message in messages %}
+  <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    {{ message }}
+  </div>
+{% endfor %}
+{% load crispy_forms_tags %}
+<form role='form' action='' method='post' enctype='multipart/form-data'>{% csrf_token %}
+	<div class='form-group'>
+		{{form.as_p}} </br>
+		<a href="{% url 'account' request.user.id %}"><button class='btn btn-primary' type='submit'>Upload Assignment</button></a>
+	</div>
+
+</form>
+
+</body>

@@ -1,0 +1,42 @@
+<head>
+    {% load static %}
+    <title>login page</title>
+    <meta charset="utf-8">   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <style type="text/css">
+    h4{font-size: 36px;text-align: center;font-family: Apple Chancery,cursive;}
+    p{font-size: 30px;text-align: center;padding-top: 100px;}
+    nav{font-family: Apple Chancery,cursive;}
+
+    </style>
+</head>
+<body background="{% static 'homepage/images/r4.jpg' %}">
+<nav class='nav navbar-inverse'>
+    <div class='container-fluid'>
+    
+        <div class='navbar=header'>
+                <a href='#' class='navbar=brand'></a>
+            </div>
+
+            <div>
+                <ul class='nav navbar-nav'>
+                    <li><a href="{% url 'home' %}">About</a> </li>
+                    <li><a href="{% url 'subjects' %}">Subjects</a></li>
+                    <li class='active'><a href="#">Contact</a></li>
+                </ul>
+                <ul class='nav navbar-nav navbar-right'>
+                    <li><a href="{% url 'teacher_login' %}"><span class='glyphicon glyphicon-log-in'></span>Teacher login</a></li>
+                </ul>
+            </div>
+
+        </div>
+</nav>	
+
+<h4>Contact</h4>
+<p>Phone No(campus)- +91 11 2629 4542</p>
+<p>Fax- +91 11 26475406</p>
+<p>Email- sharanjitkaur@andc.du.ac.in</p>
+</body>
